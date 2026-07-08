@@ -4,6 +4,7 @@ os: linux
 files:
   - source: /
     destination: /var/www/html
+    overwrite: true
 
 permissions:
   - object: /var/www/html
@@ -21,7 +22,7 @@ permissions:
       - file
 
 hooks:
-  BeforeInstall:
+  AfterInstall:
     - location: scripts/build_and_push.sh
-      timeout: 300
+      timeout: 900
       runas: root
