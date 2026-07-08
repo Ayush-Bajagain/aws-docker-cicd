@@ -18,7 +18,7 @@ docker login --username AWS --password-stdin ${ECR_URI}
 
 echo "Building Docker image..."
 
-cd /opt/docker-app
+cd /var/www/html
 
 docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .
 
